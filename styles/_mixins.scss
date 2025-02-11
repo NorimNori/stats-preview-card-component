@@ -2,3 +2,28 @@
     display: grid;
     place-items: center;
 }
+
+@mixin background-image($url) {
+    background: {
+        image: url($url);
+        position: top center;
+        repeat: no-repeat;
+        size: cover;
+    }
+}
+
+@mixin text-styles($font-family, $font-size, $font-weight, $color, $letter-spacing: null, $line-height: null) {
+    font: {
+        family: $font-family;
+        size: $font-size;
+        weight: $font-weight;
+    }
+    color: $color;
+    
+    @if $letter-spacing != null {
+      letter-spacing: $letter-spacing;
+    }
+    @if $line-height != null {
+      line-height: $line-height;
+    }
+  }
