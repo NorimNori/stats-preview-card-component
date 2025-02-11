@@ -12,9 +12,9 @@
 
 .stats-card {
     display: grid;
-    gap: 2em;
+    gap: 1.2em;
     width: 85vw;
-    max-width: 35rem;
+    max-width: 30rem;
     border-radius: 5px;
     margin: 4.5rem 0;
     background-color: colors.$darkDesaturatedBlue;
@@ -46,14 +46,13 @@
     }
 
     &__content {
-        padding: 1em;
+        padding: 1.8em;
         text-align: center;
     }
 
     &-title {
-        @include mixins.text-styles(var(--font-primary), 1.8rem, 700, colors.$white, .01em);
+        @include mixins.text-styles(var(--font-primary), clamp(1.6rem, 1.317rem + 1.416vw, 2.4rem), 700, colors.$white, .015em);
         padding: 0 .3em .8em;
-
     }
 
     &__highlight {
@@ -61,7 +60,7 @@
     }
 
     &__description {
-        @include mixins.text-styles(var(--font-secondary), .95rem, 400, colors.$slightlyTransparentWhite, .025em, 1.5);
+        @include mixins.text-styles(var(--font-secondary), clamp(0.85rem, 0.797rem + 0.265vw, 1rem), 400, colors.$slightlyTransparentWhite, .01em, 1.5);
     }
 
     &__list {
@@ -73,7 +72,7 @@
     }
 
     &__number {
-        @include mixins.text-styles(var(--font-primary), 1.3rem, 700, null);
+        @include mixins.text-styles(var(--font-primary), clamp(1.3rem, 1.229rem + 0.354vw, 1.5rem), 700, null);
     }
 
     &__label {
@@ -93,7 +92,7 @@ footer {
     }
 }
 
-@media (min-width: 1224px) {
+@media (min-width: 1024px) {
     .stats-card {
     grid-template-columns: repeat(9, 1fr);
     max-width: 65rem;
@@ -116,9 +115,9 @@ footer {
       }
 
       &__list {
-        @include mixins.centerGrid;
         grid-template-columns: repeat(3, 1fr);
-        padding-top: 4em;
-    }
+        place-items: start;
+        padding-top: 3em;
+      }
     }
 }
