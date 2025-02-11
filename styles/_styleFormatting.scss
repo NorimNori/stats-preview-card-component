@@ -7,6 +7,11 @@
     *::after {
         box-sizing: border-box;
     }
+
+    :root {
+        --font-primary: 'Inter', sans-serif;
+        --font-secondary: 'Lexed Deca', sans-serif;
+    }
     
     html {
         -moz-text-size-adjust: none;
