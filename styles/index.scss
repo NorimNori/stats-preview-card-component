@@ -14,6 +14,7 @@
     display: grid;
     gap: 2em;
     width: 85vw;
+    max-width: 35rem;
     border-radius: 5px;
     margin: 4.5rem 0;
     background-color: colors.$darkDesaturatedBlue;
@@ -89,5 +90,35 @@ footer {
     a { 
         text-align: center;
         color: colors.$softViolet
+    }
+}
+
+@media (min-width: 1224px) {
+    .stats-card {
+    grid-template-columns: repeat(9, 1fr);
+    max-width: 65rem;
+    gap: 0;
+
+    &__image {
+        background-image: url('./../images/image-header-desktop.jpg');
+        background-size: cover;
+        height: 100%;
+        border-radius: 0 5px 5px 0;
+        grid-column: 6 / 10;
+        grid-row: 1;
+        z-index: 10;
+      }
+
+      &__content {
+        grid-column: 1 / 5;
+        padding: 4em 0 2.5em 3em;
+        text-align: left;
+      }
+
+      &__list {
+        @include mixins.centerGrid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-top: 4em;
+    }
     }
 }
