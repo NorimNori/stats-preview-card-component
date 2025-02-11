@@ -24,6 +24,7 @@
         height: 200px;
         overflow: hidden;
         position: relative;
+        filter: brightness(1.1);
         border-radius: 5px 5px 0 0;
         background: {
             image: url('./../images/image-header-mobile.jpg');
@@ -38,7 +39,6 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            opacity: 0.6;
             border-radius: inherit;
             mix-blend-mode: multiply;
             background-color: hsl(277, 64%, 61%);
@@ -51,7 +51,7 @@
     }
 
     &-title {
-        @include mixins.text-styles(var(--font-primary), clamp(1.6rem, 1.317rem + 1.416vw, 2.4rem), 700, colors.$white, .015em);
+        @include mixins.text-styles(var(--font-primary), clamp(1.6rem, 1.264rem + 1.681vw, 2.55rem), 700, colors.$white, .015em);
         padding: 0 .3em .8em;
     }
 
@@ -60,7 +60,8 @@
     }
 
     &__description {
-        @include mixins.text-styles(var(--font-secondary), clamp(0.85rem, 0.797rem + 0.265vw, 1rem), 400, colors.$slightlyTransparentWhite, .01em, 1.5);
+        @include mixins.text-styles(var(--font-secondary), clamp(0.85rem, 0.797rem + 0.265vw, 1rem), 400, colors.$slightlyTransparentWhite, .015em, 1.5);
+        padding: 0 clamp(0rem, -0.909rem + 4.545vw, 2rem)
     }
 
     &__list {
@@ -94,8 +95,8 @@ footer {
 
 @media (min-width: 1024px) {
     .stats-card {
-    grid-template-columns: repeat(9, 1fr);
-    max-width: 65rem;
+    grid-template-columns: repeat(11, 1fr);
+    max-width: 68rem;
     gap: 0;
 
     &__image {
@@ -103,15 +104,20 @@ footer {
         background-size: cover;
         height: 100%;
         border-radius: 0 5px 5px 0;
-        grid-column: 6 / 10;
+        grid-column: 7 / 12;
         grid-row: 1;
         z-index: 10;
       }
 
       &__content {
-        grid-column: 1 / 5;
-        padding: 4em 0 2.5em 3em;
+        grid-column: 1 / 6;
+        padding: 4em 0 2.5em 4em;
         text-align: left;
+      }
+
+      &-title,
+      &__description {
+        padding-inline: 0;
       }
 
       &__list {
